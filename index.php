@@ -73,7 +73,7 @@
                     $nome = $senha = $email = $admin = "";
 
                     if(empty($_POST['nomeuser'])){
-
+                        
                     }
                     if(empty($_POST['email'])){
                         
@@ -92,9 +92,15 @@
                     }
 
                 }
+
+                
+
+
+
+                }
             
             
-            }
+            
 
             
 
