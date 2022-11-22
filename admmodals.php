@@ -3,22 +3,25 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['registrarprod'])){
 
 $nomeprod = $desc = $preco = "";
 
+$nomeprod = mysqli_real_escape_string($conexao, $_POST['nomeprod']);
+$desc = mysqli_real_escape_string($conexao, $_POST['desc']);
+$preco = mysqli_real_escape_string($conexao, $_POST['preco']);
 
-if(empty($_POST['nomeprod'])){
-
-}else{
-    $nomeprod = $_POST['nomeprod'];
-}
-if(empty($_POST['desc'])){
+// if(empty($_POST['nomeprod'])){
+//     $nomeprod = null;
+// }else{
+//     $nomeprod = $_POST['nomeprod'];
+// }
+// if(empty($_POST['desc'])){
     
-}else{
-    $desc = $_POST['desc'];
-}
-if(empty($_POST['preco'])){
+// }else{
+//     $desc = $_POST['desc'];
+// }
+// if(empty($_POST['preco'])){
     
-}else{
-    $preco = $_POST['preco'];
-}
+// }else{
+//     $preco = $_POST['preco'];
+// }
 
 if($nomeprod && $desc && $preco){
 
@@ -26,7 +29,7 @@ if($nomeprod && $desc && $preco){
 
     $query = mysqli_query($conexao, $sql);
 
-
+    header("parent.location:index.html");
 
 }
 }
