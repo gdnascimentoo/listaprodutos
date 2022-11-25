@@ -32,6 +32,18 @@
 </head>
 <body>
     
+    <nav>
+    
+    <ul>
+    
+    <li>CADASTRAR PRODUTO</li>
+    <li>CADASTRAR USUÁRIO</li>
+    <li><a href="logout.php">LOG OUT</a></li>
+
+    </ul>
+
+    </nav>
+
     <table>
 
         <tr>
@@ -54,7 +66,15 @@
                 echo"<tr><td>".$tabela['prodid']."</td>";
                 echo"<td>".utf8_encode($tabela['nome'])."</td>";
                 echo"<td>".utf8_encode($tabela['descricao'])."</td>";
-                echo"<td>".number_format($tabela['preco'], 2, '.', '')."</td></tr>";
+                echo"<td>".number_format($tabela['preco'], 2, '.', '')."</td>";
+
+                if($_SESSION["adm"] == true){
+
+                    echo"<td><a href='excluir.php?prodid=".$tabela['prodid']."'><img src=\"img/cancelar.png\"></a></td></tr>";
+
+                }else{
+                    echo("</tr>");
+                }
 
             }
 
@@ -62,49 +82,10 @@
 
     </table>
 
-    <?php
-    
+    <?php    
             if($_SESSION["adm"] == true){
-
                 include("admmodals.php");
-
-                if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['registraruser'])){
-
-                    $nome = $senha = $email = $admin = "";
-
-                    if(empty($_POST['nomeuser'])){
-                        
-                    }
-                    if(empty($_POST['email'])){
-                        
-                    }
-                    if(empty($_POST['senha'])){
-
-                    }else{
-                        if($_POST['senha'] == $_POST['senhaconfirma']){
-                            
-                        }else{
-
-                        }
-                    }
-                    if(empty($_POST['usertype'])){
-                        
-                    }
-
-                }
-
-                
-
-
-
-                }
-            
-            
-            
-
-            
-
-
+            }       
     ?>
 
 </body>
