@@ -79,20 +79,28 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['registraruser'])){
 
 ?>
 
+<script src="js/admmodal.js" defer></script>
+<script src="js/admmodal2.js" defer></script>
+
+<div id="modalproduto" class="modal">
+
     <form action="" method="POST" target="_self">
 
         <label for="nomeprod">Nome do produto:</label>
         <input type="text" name="nomeprod" id="nomeprod" autocomplete="off">
         <label for="descprod">Descrição do produto:</label>
-        <input type="textarea" name="desc" id="descprod" autocomplete="off">
+        <textarea name="desc" id="descprod" autocomplete="off"></textarea>
         <label for="preco">Preço:</label>
         <input type="number" name="preco" id="preco" autocomplete="off">
+        <div id="btts">
         <input type="submit" name="registrarprod" value="Registrar">
-
+        <button>Cancelar</button>
+        </div>
     </form>
 
+</div>
 
-<div class="modalcadastro">
+<div id="modalcadastro" class="modal">
 
     <form action="" method="POST" target="_self">
 
@@ -104,11 +112,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['registraruser'])){
         <input type="password" name="senha" id="senha" autocomplete="off">
         <label for="senha">Confirmar senha:</label>
         <input type="password" name="senhaconfirma" id="senhaconfirma">
+        <div>
         <input type="radio" name="usertype" value="adm" id="admradio" autocomplete="off">
         <label for="admradio">Administrador</label>
+        </div>
+        <div>
         <input type="radio" name="usertype" value="user" id="userradio" autocomplete="off">
         <label for="userradio">Usuário</label>
+        </div>
+        <div id="btts">
         <input type="submit" name="registraruser" value="Registrar">
-
+        <button>Cancelar</button>
+        </div>
     </form>
 </div>

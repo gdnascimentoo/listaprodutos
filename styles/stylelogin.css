@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #8ecae6;
+}
+
+main > h1{
+
+    font-size: 40px;
+    background-color: #219ebc;
+    width: 500px;
+}
+
+main > form{
+
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    background-color: #219ebc;
+    padding: 20px;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 200px 0px 0px 0px;
+    text-align: center;
+}
+
+main > form > input{
+
+    margin: 10px;
+    padding: 2px 5px;
+    border-radius: 0px;
+    outline: none;
+    border: 1px solid white;
+    background-color: #8ecae6;
+
+}

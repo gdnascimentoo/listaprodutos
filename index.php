@@ -17,14 +17,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tabela de Produtos</title>
-    <link rel="stylesheet" href="/styles/stylegeral.css">
-
     <?php
     
         if($_SESSION["adm"] == true){
-            echo"<link rel=\"stylesheet\" href=\"/styles/styleadm.css\">";
+            echo"<link rel=\"stylesheet\" href=\"styles/styleadm.css\">";
         }else{
-            echo"<link rel=\"stylesheet\" href=\"/styles/styleuser.css\">";
+            echo"<link rel=\"stylesheet\" href=\"styles/styleuser.css\">";
         }
 
     ?>
@@ -32,15 +30,19 @@
 </head>
 <body>
     
-    <nav>
+    <nav id="navlinks">
     
-    <ul>
-    
-    <li>CADASTRAR PRODUTO</li>
-    <li>CADASTRAR USUÁRIO</li>
-    <li><a href="logout.php">LOG OUT</a></li>
+        <ul>
+        <?php
+        if($_SESSION["adm"] == true){
+        echo"
+        <li id=\"cadprod\">CADASTRAR PRODUTO</li>
+        <li id=\"caduser\">CADASTRAR USUÁRIO</li>";
+        }
+        ?>
+        <a href="logout.php"><li>LOG OUT</li></a>
 
-    </ul>
+        </ul>
 
     </nav>
 
@@ -51,6 +53,13 @@
             <th>Nome</th>
             <th>Descrição</th>
             <th>Preço</th>
+            <?php
+            if($_SESSION["adm"] == true){
+
+                echo"<th style=\"width:40px;\">Excluir</th>";
+            
+            }
+            ?>
         </tr>
 
         <?php
